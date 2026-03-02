@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Industrial background placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0c0f"/>
+      <stop offset="0.6" stop-color="#050505"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <radialGradient id="y" cx="22%" cy="18%" r="62%">
+      <stop offset="0" stop-color="#FFCD00" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFCD00" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="s" cx="78%" cy="28%" r="62%">
+      <stop offset="0" stop-color="#94a3b8" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#94a3b8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+    <pattern id="diag" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(18)">
+      <rect width="18" height="18" fill="transparent"/>
+      <rect x="0" y="0" width="8" height="18" fill="rgba(255,255,255,0.03)"/>
+    </pattern>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#g)"/>
+  <rect width="1920" height="1080" fill="url(#grid)" opacity="0.55"/>
+  <rect width="1920" height="1080" fill="url(#diag)" opacity="0.85"/>
+  <rect width="1920" height="1080" fill="url(#y)"/>
+  <rect width="1920" height="1080" fill="url(#s)"/>
+
+  <g opacity="0.9">
+    <path d="M170 760h1580" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+    <path d="M260 840h1400" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+    <path d="M340 920h1240" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+  </g>
+
+  <g opacity="0.65">
+    <path d="M250 710l210-170h220l160 130h280l170-140h260l230 180" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M270 705l195-155h200l160 130h290l160-130h240l215 170" fill="none" stroke="rgba(255,205,0,0.10)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.35">
+    <circle cx="280" cy="210" r="120" fill="rgba(255,205,0,0.10)"/>
+    <circle cx="1620" cy="280" r="160" fill="rgba(148,163,184,0.10)"/>
+  </g>
+</svg>
+
