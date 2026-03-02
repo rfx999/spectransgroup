@@ -2,469 +2,434 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ООО «СпецТрансГрупп» — импорт спецтехники из КНР и логистика</title>
-  <meta name="description" content="Импорт спецтехники из Китая, собственный СВХ в Уссурийске, таможенное оформление и аренда техники. Полный цикл: от подбора в КНР до регистрации ЭПТС." />
-  <meta name="theme-color" content="#000000" />
-  <meta name="format-detection" content="telephone=no" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpecTransGroup — логистика и импорт спецтехники в Приморском крае</title>
+  <meta name="description" content="Комплексные решения по поставке и обслуживанию спецтехники в Приморском крае. Импорт из КНР, СВХ Уссурийск, аренда. Опыт с 2008 года." />
+  <meta name="theme-color" content="#050505" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
-  <meta property="og:title" content="СпецТрансГрупп — импорт спецтехники из КНР и логистика" />
-  <meta property="og:description" content="Ваш стратегический партнер в Приморье: импорт спецтехники, собственный СВХ, таможенное оформление и аренда техники с 2008 года." />
+  <meta property="og:title" content="SpecTransGroup — логистика без границ" />
+  <meta property="og:description" content="Комплексные решения по поставке и обслуживанию спецтехники в Приморском крае. Опыт с 2008 года." />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --accent: #FFCD00;
+      --slate-100: #f1f5f9;
+      --slate-300: #cbd5e1;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --border: rgba(255,255,255,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--slate-100);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5,5,5,0.9);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-weight: 900;
+      font-style: italic;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      color: var(--slate-100);
+    }
+    .logo span { color: var(--accent); }
+    .nav {
+      display: flex;
+      gap: clamp(12px, 2.5vw, 28px);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--slate-500);
+    }
+    .nav a:hover { color: var(--accent); }
+    .header-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: var(--slate-800);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+    .header-phone:hover { background: rgba(30,41,59,0.9); }
+
+    /* Hero */
+    .hero {
+      padding: clamp(80px, 12vw, 140px) 0 clamp(60px, 8vw, 100px);
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--slate-100);
+    }
+    .hero h1 .accent { color: var(--accent); }
+    .hero-sub {
+      max-width: 560px;
+      margin: 0 auto 32px;
+      font-size: 1rem;
+      color: var(--slate-500);
+    }
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: none;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-prim {
+      background: var(--accent);
+      color: #0a0a0a;
+      box-shadow: 0 4px 24px rgba(255,205,0,0.25);
+    }
+    .btn-prim:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,205,0,0.3); }
+    .btn-sec {
+      background: transparent;
+      color: var(--slate-300);
+      border: 1px solid var(--slate-700);
+    }
+    .btn-sec:hover { color: var(--slate-100); border-color: var(--slate-500); }
+
+    /* Sections common */
+    .sec {
+      padding: clamp(48px, 8vw, 80px) 0;
+    }
+    .sec-title {
+      font-weight: 900;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: var(--slate-100);
+    }
+    .sec-sub { color: var(--slate-500); font-size: 0.9375rem; max-width: 640px; }
+
+    /* Import path */
+    .path { margin-top: 28px; }
+    .path-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    .path-step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 20px;
+      background: rgba(30,41,59,0.5);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+    .path-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #e6b800);
+      color: #0a0a0a;
+      font-weight: 900;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .path-head { font-weight: 700; font-size: 1rem; margin-bottom: 4px; color: var(--slate-100); }
+    .path-txt { font-size: 0.9375rem; color: var(--slate-500); }
+
+    /* Service / Constructor */
+    .constructor-card {
+      margin-top: 20px;
+      padding: 24px;
+      background: rgba(30,41,59,0.4);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+    .constructor-card p { color: var(--slate-400); font-size: 0.9375rem; }
+
+    /* Rental / Fleet */
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .fleet-card {
+      background: rgba(30,41,59,0.5);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .fleet-img {
+      height: 140px;
+      background: var(--slate-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fleet-img svg { width: 64px; height: 64px; color: var(--slate-600); opacity: 0.7; }
+    .fleet-body { padding: 18px; }
+    .fleet-name { font-weight: 700; font-style: italic; font-size: 1rem; margin-bottom: 4px; }
+    .fleet-desc { font-size: 0.8125rem; color: var(--slate-500); }
+    .fleet-tagline {
+      margin-top: 20px;
+      font-size: 0.875rem;
+      color: var(--slate-500);
+      text-align: center;
+    }
+
+    /* SWH section */
+    .infra-card {
+      margin-top: 20px;
+      padding: 24px;
+      background: rgba(30,41,59,0.4);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+    .infra-card p { color: var(--slate-400); font-size: 0.9375rem; }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      margin-top: 40px;
+    }
+    .footer-inner { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    .footer-legal { font-size: 0.8125rem; color: var(--slate-500); }
+    .status-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(30,41,59,0.8);
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--slate-400);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      50% { opacity: 0.9; }
+      75% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+    }
+
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .header-phone { padding: 8px 14px; font-size: 0.8125rem; }
+    }
+  </style>
 </head>
 <body>
-  <div class="page" id="top">
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="#top" class="logo" aria-label="SPECTRANSGROUP — на главную">
-          <span class="logo-mark">STG</span>
-          <span class="logo-text">SPECTRANSGROUP</span>
-        </a>
+  <header class="header" id="top">
+    <div class="wrap header-inner">
+      <a href="#top" class="logo" aria-label="На главную"><span>SPEC</span>TRANSGROUP</a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="#import">Импорт из КНР</a>
+        <a href="#constructor">Конструктор</a>
+        <a href="#rental">Аренда техники</a>
+        <a href="#svh">СВХ</a>
+      </nav>
+      <a class="header-phone" href="tel:+79242590120" aria-label="Позвонить">+7 924 259-01-20</a>
+    </div>
+  </header>
 
-        <nav class="main-nav" aria-label="Главная навигация сайта">
-          <a href="#import">Импорт из КНР</a>
-          <a href="#warehouse">СВХ и Таможня</a>
-          <a href="#fleet">Аренда техники</a>
-          <a href="#service">Разборка/Сборка</a>
-        </nav>
-
-        <a class="header-cta" href="tel:+79242590120" aria-label="Позвонить в СпецТрансГрупп: +7 924 259-01-20">
-          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M3.3 2.3c.4-.4 1-.4 1.4 0l2.4 2.4c.4.4.4 1 0 1.4L5.9 7.9c.2.7.7 1.7 1.6 2.6.9.9 1.9 1.5 2.6 1.7l1.8-1.8c.4-.4 1-.4 1.4 0l2.4 2.4c.4.4.4 1 0 1.4l-1 1c-.6.6-1.5.9-2.4.8-1.7-.2-3.9-1.2-6-3.3-2.1-2.1-3.1-4.3-3.3-6-.1-.9.2-1.8.8-2.4l1-1z" />
-          </svg>
-          <span>+7 924 259-01-20</span>
-        </a>
-      </div>
-    </header>
-
-    <main>
-      <!-- Hero -->
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <div data-animate>
-            <div class="hero-badge-row">
-              <span class="hero-pill">Уссурийск · Приморский край · КНР</span>
-              <span class="hero-tagline">Импорт спецтехники · Логистика · СВХ</span>
-            </div>
-
-            <h1 id="hero-title" class="hero-title">
-              <span>ЛОГИСТИКА</span>
-              <span class="hero-title-accent">БЕЗ ГРАНИЦ</span>
-            </h1>
-
-            <p class="hero-subtitle">
-              Ваш стратегический партнер в Приморье. <strong>Полный цикл работы со спецтехникой</strong>:
-              от профессионального подбора в КНР до регистрации ЭПТС на собственном СВХ.
-            </p>
-
-            <div class="hero-cta-row">
-              <a
-                class="btn btn-primary"
-                href="https://t.me/+79242590120"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Связаться в Telegram со СпецТрансГрупп"
-              >
-                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                  <path
-                    fill="currentColor"
-                    d="M17.8 3.1c.3-.1.7-.1.9.1.2.2.3.5.3.8v.1l-2.5 12c-.1.6-.8 1-1.3.7l-.1-.1-3.7-2.8-1.9 2c-.3.3-.7.3-1 0l-.1-.1-.1-.2-.7-3.4L4 11c-.4-.1-.5-.6-.5-.9v-.1c.1-.3.3-.5.6-.6l13.7-6.3zM6.3 10.9l1.8.8.5 2.3 1-1 4-6.2-7.3 4.1z"
-                  />
-                </svg>
-                <span>Связаться в Telegram</span>
-              </a>
-
-              <a class="btn btn-outline" href="tel:+79242590120">
-                <span>Перезвоните мне</span>
-              </a>
-            </div>
-
-            <div class="hero-meta" aria-label="Ключевые параметры работы">
-              <div class="hero-meta-item">
-                <span class="hero-meta-dot" aria-hidden="true"></span>
-                <span>Работаем с 2008 года</span>
-              </div>
-              <div class="hero-meta-item">
-                <span>Собственный СВХ в г. Уссурийск</span>
-              </div>
-              <div class="hero-meta-item">
-                <span>Прямой выход на КНР без диспетчерских цепочек</span>
-              </div>
-            </div>
-          </div>
-
-          <aside class="hero-aside" aria-label="Краткая схема работы" data-animate>
-            <div class="hero-aside-tag">Модель работы</div>
-            <div class="hero-aside-title">Вы — владелец техники, мы — операторы процесса</div>
-            <div class="hero-aside-grid">
-              <div class="hero-aside-item">
-                <strong>Прозрачные расчёты</strong>
-                Вы оплачиваете технику напрямую поставщику в КНР, без скрытых наценок на «железо».
-              </div>
-              <div class="hero-aside-item">
-                <strong>Операционная ответственность</strong>
-                СпецТрансГрупп берёт на себя логистику, СВХ, таможню и технический сервис.
-              </div>
-              <div class="hero-aside-item">
-                <strong>Фокус на задаче</strong>
-                Вместе подбираем технику под реальные объёмы и грунты, а не под прайс.
-              </div>
-              <div class="hero-aside-item">
-                <strong>Юридическая чистота</strong>
-                Официальные договоры, НДС и полный комплект документов по каждой машине.
-              </div>
-            </div>
-            <div class="hero-aside-accent" aria-hidden="true"></div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- Импорт спецтехники -->
-      <section id="import" class="section" aria-labelledby="import-title">
-        <div class="container">
-          <header class="section-header" data-animate>
-            <div class="section-kicker">Импорт спецтехники</div>
-            <h2 id="import-title" class="section-title">Процесс под ключ — без скрытой наценки на технику</h2>
-            <p class="section-subtitle">
-              Мы подбираем технику <strong>строго под ваши задачи</strong>, вы оплачиваете её напрямую в КНР.
-              СпецТрансГрупп закрывает весь операционный контур: логистика, СВХ, таможня, документы.
-            </p>
-          </header>
-
-          <div class="process-layout">
-            <article class="process-intro" data-animate>
-              <p>
-                Вы описываете объект, грунты, сменность и сроки. Мы формируем shortlist по технике и
-                производим инспекцию на стороне КНР. Все предложения — с фото, видео и отчётами по
-                состоянию, а не «по словам продавца».
-              </p>
-            </article>
-
-            <ol class="process-steps" aria-label="Этапы импорта спецтехники" data-animate>
-              <li class="process-step">
-                <div class="process-step-index">01</div>
-                <div>
-                  <div class="process-step-heading">Подбор и инспекция в Китае</div>
-                  <div class="process-step-copy">
-                    Полевой осмотр, дефектовка, проверка узлов и шасси. Рекомендуем только ту технику,
-                    за которую готовы отвечать своей репутацией.
-                  </div>
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-index">02</div>
-                <div>
-                  <div class="process-step-heading">Внутренняя логистика по КНР</div>
-                  <div class="process-step-copy">
-                    Организуем доставку до погранпереходов
-                    Пограничный / Полтавка с учётом габаритов и массы техники.
-                  </div>
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-index">03</div>
-                <div>
-                  <div class="process-step-heading">Переход границы и собственный СВХ</div>
-                  <div class="process-step-copy">
-                    Переводим технику через границу и доставляем на
-                    <strong>собственный склад временного хранения</strong> в г. Уссурийске.
-                  </div>
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-index">04</div>
-                <div>
-                  <div class="process-step-heading">Полное декларирование</div>
-                  <div class="process-step-copy">
-                    Штатные брокеры готовят и ведут декларации. Работаем официально, с НДС и прозрачной
-                    логистической себестоимостью.
-                  </div>
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-index">05</div>
-                <div>
-                  <div class="process-step-heading">СБКТС и ЭПТС</div>
-                  <div class="process-step-copy">
-                    При необходимости сопровождаем получение СБКТС и регистрацию ЭПТС, чтобы техника
-                    легально вышла на линию.
-                  </div>
-                </div>
-              </li>
-              <li class="process-step">
-                <div class="process-step-index">06</div>
-                <div>
-                  <div class="process-step-heading">Отправка по РФ</div>
-                  <div class="process-step-copy">
-                    Организуем доставку по России: ж/д платформы, тралы, комбинированные схемы — под
-                    ваш график ввода объекта.
-                  </div>
-                </div>
-              </li>
-            </ol>
-          </div>
-
-          <p class="process-note" data-animate>
-            Все ключевые решения фиксируются в договоре. Вы заранее понимаете стоимость «под ключ»:
-            от площадки в КНР до постановки техники на учёт.
-          </p>
-        </div>
-      </section>
-
-      <!-- СВХ и таможня -->
-      <section id="warehouse" class="section" aria-labelledby="warehouse-title">
-        <div class="container">
-          <header class="section-header" data-animate>
-            <div class="section-kicker">Собственный СВХ и Таможня</div>
-            <h2 id="warehouse-title" class="section-title">Контроль за техникой на вашей стороне границы</h2>
-            <p class="section-subtitle">
-              Техника не «теряется» в чужом СВХ. Все операции происходят на нашей площадке в Уссурийске
-              под контролем штатных специалистов.
-            </p>
-          </header>
-
-          <div class="warehouse-card" data-animate>
-            <div class="warehouse-grid">
-              <div>
-                <div class="warehouse-highlight">
-                  Собственный склад временного хранения (СВХ) в г. Уссурийск — это скорость оформления,
-                  понятные регламенты и отсутствие посредников между вами и таможней.
-                </div>
-              </div>
-              <div>
-                <ul class="warehouse-list" aria-label="Ключевые возможности СВХ СпецТрансГрупп">
-                  <li>Приём и ответственное хранение импортируемой спецтехники.</li>
-                  <li>Проведение осмотра, фото- и видеофиксация на вашей стороне границы.</li>
-                  <li>Подготовка пакета документов для декларирования и регистрации.</li>
-                  <li>Работа штатных таможенных брокеров без внешних диспетчерских цепочек.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Спецсервис: разборка/сборка -->
-      <section id="service" class="section" aria-labelledby="service-title">
-        <div class="container">
-          <header class="section-header" data-animate>
-            <div class="section-kicker">Спецсервис</div>
-            <h2 id="service-title" class="section-title">Техническое решение: разборка и сборка</h2>
-            <p class="section-subtitle">
-              Оптимизация логистических затрат для негабаритной и сложной техники за счёт продуманной
-              разборки в КНР и профессиональной сборки на базе в России.
-            </p>
-          </header>
-
-          <div class="service-layout">
-            <article class="service-card" data-animate>
-              <p class="service-copy">
-                Имеем успешный опыт с 2022 года по разборке сложной техники в Китае, перевозке узлами и
-                последующей профессиональной сборке на базе в России. Такой подход позволяет:
-              </p>
-              <div class="service-pills" aria-label="Преимущества разборки и сборки">
-                <span class="service-pill">Снизить стоимость логистики по габариту и массе</span>
-                <span class="service-pill">Упростить прохождение погранпереходов</span>
-                <span class="service-pill">Сохранить ресурс ключевых узлов</span>
-                <span class="service-pill">Соблюсти требования по безопасности перевозок</span>
-              </div>
-            </article>
-
-            <article class="service-card" data-animate>
-              <p class="service-copy">
-                Сборка выполняется на нашей российской базе механиками, которые хорошо знают технику
-                Caterpillar, Komatsu, Hitachi и других брендов. Каждый этап фиксируется в актах и
-                фотоотчётах, а техника проходит контрольный запуск под нагрузкой.
-              </p>
-              <div class="service-pills">
-                <span class="service-pill">Техническое сопровождение ввода в эксплуатацию</span>
-                <span class="service-pill">Рекомендации по дальнейшему сервису и ТО</span>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Аренда спецтехники -->
-      <section id="fleet" class="section" aria-labelledby="fleet-title">
-        <div class="container">
-          <header class="section-header" data-animate>
-            <div class="section-kicker">Аренда спецтехники</div>
-            <h2 id="fleet-title" class="section-title">Собственный парк: работаем с 2008 года</h2>
-            <p class="section-subtitle">
-              Мы не диспетчеры, мы владельцы. Наша техника участвовала в строительстве крупнейших объектов
-              Дальнего Востока. Всегда обслужена и готова к выезду.
-            </p>
-          </header>
-
-          <div class="fleet-layout">
-            <div data-animate>
-              <p class="fleet-copy">
-                Все машины проходят регламентное обслуживание и предсменный осмотр. Мы берём на себя
-                логистику техники до вашего объекта, а также контролируем соблюдение техники безопасности
-                на выгрузке.
-              </p>
-
-              <div class="fleet-grid">
-                <article class="fleet-card" aria-label="Категория: Экскаваторы" data-animate>
-                  <div class="fleet-photo-placeholder">
-                    <!-- Плейсхолдер: заменить на реальное фото, например assets/excavators.jpg -->
-                  </div>
-                  <div class="fleet-caption">
-                    <div>
-                      <div class="fleet-name">Экскаваторы</div>
-                      <div class="fleet-meta">Карьерные, гидромолоты, планировочные ковши</div>
-                    </div>
-                    <span class="fleet-tag">Фото позже</span>
-                  </div>
-                </article>
-
-                <article class="fleet-card" aria-label="Категория: Бульдозеры" data-animate>
-                  <div class="fleet-photo-placeholder">
-                    <!-- Плейсхолдер: заменить на реальное фото, например assets/bulldozers.jpg -->
-                  </div>
-                  <div class="fleet-caption">
-                    <div>
-                      <div class="fleet-name">Бульдозеры</div>
-                      <div class="fleet-meta">От лёгкого до тяжёлого класса для любых грунтов</div>
-                    </div>
-                    <span class="fleet-tag">Фото позже</span>
-                  </div>
-                </article>
-
-                <article class="fleet-card" aria-label="Категория: Низкорамные тралы" data-animate>
-                  <div class="fleet-photo-placeholder">
-                    <!-- Плейсхолдер: заменить на реальное фото, например assets/lowbed-trailers.jpg -->
-                  </div>
-                  <div class="fleet-caption">
-                    <div>
-                      <div class="fleet-name">Низкорамные тралы</div>
-                      <div class="fleet-meta">Перевозка негабарита и тяжёлой техники по ДФО</div>
-                    </div>
-                    <span class="fleet-tag">Фото позже</span>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div data-animate>
-              <p class="fleet-copy">
-                Для постоянных клиентов доступен приоритет по технике и выезд без очередей. Контролируем
-                работу на объекте через закреплённого менеджера и не бросаем вас с вопросами «на линии».
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Лид-магнит -->
-      <section class="lead-section" aria-labelledby="lead-title">
-        <div class="container">
-          <div class="lead-inner" data-animate>
-            <div class="lead-grid">
-              <div>
-                <div class="lead-badge" aria-label="Онлайн-статус сервиса расчёта">
-                  <span class="lead-badge-dot" aria-hidden="true"></span>
-                  Beget Cluster Online / Operational Intelligence
-                </div>
-                <h2 id="lead-title" class="lead-title">
-                  Получите расчет стоимости логистики и таможни за 15 минут
-                </h2>
-                <p class="lead-copy">
-                  Отправьте параметры техники и маршрута — мы быстро посчитаем логистику, СВХ и таможенную
-                  составляющую. <strong>Без навязанных услуг и скрытых комиссий.</strong>
-                </p>
-              </div>
-
-              <form class="lead-form" action="#" method="post">
-                <div class="field-group">
-                  <label class="field-label" for="lead-name">Контактное лицо</label>
-                  <input
-                    class="field-input"
-                    type="text"
-                    id="lead-name"
-                    name="name"
-                    placeholder="Имя или название компании"
-                    autocomplete="name"
-                  />
-                </div>
-                <div class="field-group">
-                  <label class="field-label" for="lead-phone">Телефон / мессенджер</label>
-                  <input
-                    class="field-input"
-                    type="tel"
-                    id="lead-phone"
-                    name="phone"
-                    placeholder="+7 ..."
-                    autocomplete="tel"
-                  />
-                </div>
-                <div class="field-group">
-                  <label class="field-label" for="lead-details">Параметры техники</label>
-                  <input
-                    class="field-input"
-                    type="text"
-                    id="lead-details"
-                    name="details"
-                    placeholder="Тип, масса, точка в КНР, регион доставки"
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary lead-cta">
-                  <span>Получить расчет</span>
-                </button>
-                <p class="lead-secondary">
-                  Или отправьте заявку напрямую в Telegram:
-                  <span>@SPECTRANSGROUP</span> с пометкой «расчёт 15 минут».
-                </p>
-                <p class="lead-hint">
-                  Нажатие на кнопку не запускает онлайн-оплату. Менеджер свяжется с вами для уточнения
-                  деталей и вышлет расчёт любым удобным способом.
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <div>© 2025 ООО «СпецТрансГрупп»</div>
-          <div class="footer-meta">
-            <span>ИНН 2511128558</span>
-            <span>Приморский край, г. Уссурийск</span>
-          </div>
-        </div>
-        <div class="status-pill">
-          Beget Cluster Online / Operational Intelligence
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <h1 id="hero-title">ЛОГИСТИКА <span class="accent">БЕЗ ГРАНИЦ</span></h1>
+        <p class="hero-sub">Комплексные решения по поставке и обслуживанию спецтехники в Приморском крае. Опыт работы с 2008 года.</p>
+        <div class="hero-btns">
+          <a class="btn btn-prim" href="https://t.me/+79242590120" target="_blank" rel="noopener noreferrer">Связаться в Telegram</a>
+          <a class="btn btn-sec" href="tel:+79242590120">Позвонить</a>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <script>
-    (function () {
-      const elements = document.querySelectorAll("[data-animate]");
-      if (!("IntersectionObserver" in window) || !elements.length) return;
+    <section id="import" class="sec" aria-labelledby="import-title">
+      <div class="wrap">
+        <h2 id="import-title" class="sec-title">Путь импорта спецтехники</h2>
+        <p class="sec-sub">От подбора в КНР до отправки по РФ — полный цикл под вашим контролем.</p>
+        <ol class="path path-list">
+          <li class="path-step">
+            <span class="path-num" aria-hidden="true">1</span>
+            <div>
+              <div class="path-head">Подбор</div>
+              <p class="path-txt">Инспекция и выбор техники под задачи, прямая оплата от клиента.</p>
+            </div>
+          </li>
+          <li class="path-step">
+            <span class="path-num" aria-hidden="true">2</span>
+            <div>
+              <div class="path-head">Логистика</div>
+              <p class="path-txt">Доставка по КНР до погранпереходов Пограничный / Полтавка.</p>
+            </div>
+          </li>
+          <li class="path-step">
+            <span class="path-num" aria-hidden="true">3</span>
+            <div>
+              <div class="path-head">СВХ</div>
+              <p class="path-txt">Размещение на терминале в г. Уссурийске.</p>
+            </div>
+          </li>
+          <li class="path-step">
+            <span class="path-num" aria-hidden="true">4</span>
+            <div>
+              <div class="path-head">Декларирование</div>
+              <p class="path-txt">Оформление штатными декларантами компании.</p>
+            </div>
+          </li>
+          <li class="path-step">
+            <span class="path-num" aria-hidden="true">5</span>
+            <div>
+              <div class="path-head">ЭПТС / СБКТС</div>
+              <p class="path-txt">Получение полного пакета документов и отправка по РФ.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
+    <section id="constructor" class="sec" aria-labelledby="constructor-title">
+      <div class="wrap">
+        <h2 id="constructor-title" class="sec-title">Конструктор под ключ</h2>
+        <div class="constructor-card">
+          <p>Оптимизация затрат на ввоз спецтехники. Профессиональная разборка в Китае, логистика агрегатов, таможенная очистка и квалифицированная сборка на базе в России. Опыт реализации схемы с 2022 года.</p>
+        </div>
+      </div>
+    </section>
 
-      elements.forEach((el) => observer.observe(el));
-    })();
-  </script>
+    <section id="rental" class="sec" aria-labelledby="rental-title">
+      <div class="wrap">
+        <h2 id="rental-title" class="sec-title">Собственный парк техники</h2>
+        <p class="sec-sub">С 2008 года на рынке. Мы — владельцы, а не диспетчеры.</p>
+        <div class="fleet-grid">
+          <article class="fleet-card">
+            <div class="fleet-img" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 40h48v8H8zM12 32l6-12h28l6 12M20 44v4M44 44v4M32 20v12" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="fleet-body">
+              <div class="fleet-name">Низкорамные тралы</div>
+              <div class="fleet-desc">до 60 т</div>
+            </div>
+          </article>
+          <article class="fleet-card">
+            <div class="fleet-img" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 44h32v6H16zM20 44V28l8-12h8l8 12v16M28 16v4M36 16v4M24 28h16" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="fleet-body">
+              <div class="fleet-name">Экскаваторы</div>
+              <div class="fleet-desc">Карьерные и универсальные</div>
+            </div>
+          </article>
+          <article class="fleet-card">
+            <div class="fleet-img" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 40h40v6H12zM16 40V26l10-14h12l10 14v14M20 38h24M28 12v4M36 12v4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="fleet-body">
+              <div class="fleet-name">Бульдозеры</div>
+              <div class="fleet-desc">Различный класс и назначение</div>
+            </div>
+          </article>
+        </div>
+        <p class="fleet-tagline">Техника всегда обслужена и готова к работе на объектах любой сложности.</p>
+      </div>
+    </section>
+
+    <section id="svh" class="sec" aria-labelledby="svh-title">
+      <div class="wrap">
+        <h2 id="svh-title" class="sec-title">СВХ и Таможня</h2>
+        <div class="infra-card">
+          <p>Прохождение всех процедур в г. Уссурийске. Собственные декларанты обеспечивают оперативный выпуск и контроль на всех этапах.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-legal">
+        ООО «СпецТрансГрупп» (LLC SpecTransGroup), ИНН 2511128558
+      </div>
+      <div class="status-bar" aria-label="Статус системы">
+        <span class="status-dot" aria-hidden="true"></span>
+        Logistics Hub Status: Active / Customs: Online
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
