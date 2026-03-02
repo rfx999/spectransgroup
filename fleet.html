@@ -26,9 +26,9 @@
       </a>
 
       <nav class="nav" aria-label="Навигация по разделам (на главной)">
-        <a href="index.html#algorithm">Импорт из КНР</a>
+        <a href="index.html#import">Импорт из КНР</a>
         <a href="index.html#constructor">Конструктор</a>
-        <a href="index.html#services">Аренда техники</a>
+        <a href="index.html#rental">Аренда техники</a>
         <a href="index.html#customs">СВХ</a>
       </nav>
 
@@ -45,7 +45,12 @@
 
   <main id="content">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__slide hero__slide--1 is-active"></div>
+        <div class="hero__slide hero__slide--2"></div>
+        <div class="hero__slide hero__slide--3"></div>
+        <div class="hero__slide hero__slide--4"></div>
+      </div>
       <div class="container hero__grid">
         <div data-reveal>
           <div class="kicker">
@@ -82,8 +87,8 @@
     <section class="section" aria-labelledby="catalog-title">
       <div class="container">
         <header class="section__head" data-reveal>
-          <h2 class="h2" id="catalog-title">Каталог техники</h2>
-          <p class="sub">Параметры (ковш/объём, масса/грузоподъёмность) уточняем быстро — лучше всего в Telegram.</p>
+          <h2 class="h2" id="catalog-title">ПАРК ТЕХНИКИ</h2>
+          <p class="sub">Все параметры (ковш/объём, масса/грузоподъёмность) актуализируем под конкретную задачу.</p>
         </header>
 
         <div class="catalog" data-reveal>
@@ -99,8 +104,8 @@
                 <span class="pill">в парке</span>
               </div>
               <div class="kv">
-                <div><strong>Ковш/объём</strong>уточняется</div>
-                <div><strong>Масса</strong>уточняется</div>
+                <div><strong>Ковш/объём</strong>1.4–1.8 м³</div>
+                <div><strong>Масса</strong>≈ 32–34 т</div>
               </div>
             </div>
 
@@ -110,8 +115,8 @@
                 <span class="pill">в парке</span>
               </div>
               <div class="kv">
-                <div><strong>Ковш/объём</strong>уточняется</div>
-                <div><strong>Масса</strong>уточняется</div>
+                <div><strong>Ковш/объём</strong>1.0–1.4 м³</div>
+                <div><strong>Масса</strong>≈ 21–23 т</div>
               </div>
             </div>
 
@@ -121,8 +126,8 @@
                 <span class="pill">в парке</span>
               </div>
               <div class="kv">
-                <div><strong>Ковш/объём</strong>уточняется</div>
-                <div><strong>Масса</strong>уточняется</div>
+                <div><strong>Ковш/объём</strong>1.6–2.0 м³</div>
+                <div><strong>Масса</strong>≈ 32–38 т</div>
               </div>
             </div>
           </div>
@@ -139,8 +144,8 @@
                 <span class="pill">в парке</span>
               </div>
               <div class="kv">
-                <div><strong>Объём/кузов</strong>уточняется</div>
-                <div><strong>Г/п</strong>уточняется</div>
+                <div><strong>Объём/кузов</strong>≈ 16–20 м³</div>
+                <div><strong>Г/п</strong>до 25 т</div>
               </div>
             </div>
 
@@ -150,8 +155,8 @@
                 <span class="pill">в парке</span>
               </div>
               <div class="kv">
-                <div><strong>Объём/кузов</strong>уточняется</div>
-                <div><strong>Г/п</strong>уточняется</div>
+                <div><strong>Объём/кузов</strong>≈ 18–25 м³</div>
+                <div><strong>Г/п</strong>до 25–35 т</div>
               </div>
             </div>
 
@@ -161,8 +166,8 @@
                 <span class="pill">в парке</span>
               </div>
               <div class="kv">
-                <div><strong>Объём/кузов</strong>уточняется</div>
-                <div><strong>Г/п</strong>уточняется</div>
+                <div><strong>Объём/кузов</strong>≈ 18–20 м³</div>
+                <div><strong>Г/п</strong>до 35 т</div>
               </div>
             </div>
           </div>
@@ -281,6 +286,21 @@
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+
+      var bg = document.querySelector('.hero__bg');
+      if (bg) {
+        var slides = bg.querySelectorAll('.hero__slide');
+        var current = 0;
+        if (slides.length > 1) {
+          setInterval(function () {
+            slides[current].classList.remove('is-active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('is-active');
+          }, 12000);
+        } else if (slides.length === 1) {
+          slides[0].classList.add('is-active');
+        }
+      }
 
       var btn = document.getElementById('cb-toggle');
       var panel = document.getElementById('cb-panel');

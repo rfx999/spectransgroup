@@ -26,9 +26,9 @@
       </a>
 
       <nav class="nav" aria-label="Навигация по разделам (на главной)">
-        <a href="index.html#algorithm">Импорт из КНР</a>
+        <a href="index.html#import">Импорт из КНР</a>
         <a href="index.html#constructor">Конструктор</a>
-        <a href="index.html#services">Аренда техники</a>
+        <a href="index.html#rental">Аренда техники</a>
         <a href="index.html#customs">СВХ</a>
       </nav>
 
@@ -45,7 +45,12 @@
 
   <main id="content">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__slide hero__slide--1 is-active"></div>
+        <div class="hero__slide hero__slide--2"></div>
+        <div class="hero__slide hero__slide--3"></div>
+        <div class="hero__slide hero__slide--4"></div>
+      </div>
       <div class="container hero__grid">
         <div data-reveal>
           <div class="kicker">
@@ -83,7 +88,10 @@
       <div class="container">
         <header class="section__head" data-reveal>
           <h2 class="h2" id="story-title">История и вектор развития</h2>
-          <p class="sub">Мы растём там, где у клиентов больше всего потерь времени: на границе, в таможне и при подготовке техники к работе.</p>
+          <p class="sub">
+            Мы в спецтехнике и логистике уже более 15 лет. Наша техника участвовала в строительстве крупнейших
+            инфраструктурных объектов Дальнего Востока.
+          </p>
         </header>
 
         <div class="timeline" data-reveal aria-label="Ключевые этапы">
@@ -230,6 +238,21 @@
       }
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+
+      var bg = document.querySelector('.hero__bg');
+      if (bg) {
+        var slides = bg.querySelectorAll('.hero__slide');
+        var current = 0;
+        if (slides.length > 1) {
+          setInterval(function () {
+            slides[current].classList.remove('is-active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('is-active');
+          }, 12000);
+        } else if (slides.length === 1) {
+          slides[0].classList.add('is-active');
+        }
+      }
 
       var btn = document.getElementById('cb-toggle');
       var panel = document.getElementById('cb-panel');
